@@ -86,3 +86,4 @@ Make sure the EC2 instances have access to the AutoScaling API. You can achieve 
 ```
 
 See more information here: https://aws.amazon.com/blogs/devops/use-aws-codedeploy-to-deploy-to-amazon-ec2-instances-behind-an-elastic-load-balancer-2/
+EDIT
