@@ -3,7 +3,7 @@
 # Exit on error
 set -o errexit -o pipefail
 
-echo "--> Updating CentOS System"
+echo "---------------------------------------> Update apt-get <---------------------------------------"
 # Update apt-get
 apt-get update -y
 apt-get upgrade -y
