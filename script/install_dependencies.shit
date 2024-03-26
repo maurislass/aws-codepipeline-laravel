@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "si jala"
-RUN 0/0
 
 RUN sudo su
 # Exit on error
