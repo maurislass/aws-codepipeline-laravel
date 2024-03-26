@@ -21,7 +21,6 @@ echo "---------------------------------------> Install Apache <-----------------
 # Install Apache 2.4
 apt-get -y install apache2
 
-cd /etc/httpd
 echo pwd
 
 # Allow URL rewrites
