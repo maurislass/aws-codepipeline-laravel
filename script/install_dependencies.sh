@@ -5,8 +5,8 @@ set -o errexit -o pipefail
 
 echo "---------------------------------------> Update apt-get <---------------------------------------"
 # Update apt-get
-apt-get update -y
-apt-get upgrade -y
+#apt-get update -y
+#apt-get upgrade -y
 
 echo "---------------------------------------> Install Git & Curl <---------------------------------------"
 # Install packages
