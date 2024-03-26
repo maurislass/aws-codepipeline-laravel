@@ -20,10 +20,15 @@ apt-get -y remove httpd* php*
 echo "---------------------------------------> Install Apache <---------------------------------------"
 # Install Apache 2.4
 apt-get -y install apache2
-
-cd /etc/apache2
-ls -l
-
+echo "---------------------------------------> Install PHP 7.1 <---------------------------------------"
+# Install PHP 7.1
+apt -y install software-properties-common
+add-apt-repository ppa:ondrej/php
+apt-get update
+apt -y install php7.4
+#apt-get install -y php71 php71-cli php71-fpm php71-mysql php71-xml php71-curl php71-opcache php71-pdo php71-gd php71-pecl-apcu php71-mbstring php71-imap php71-pecl-redis php71-mcrypt php71-mysqlnd mod24_ssl
+systemctl restart apache2
+echo "---------------------------------------> Apache Settings <---------------------------------------"
 # Allow URL rewrites
 #PPPPP  sed -i 's#AllowOverride None#AllowOverride All#' /etc/apache2/conf/httpd.conf
 
@@ -34,14 +39,6 @@ mkdir -p /var/www/html/public
 # Change apache directory index
 #PPPPP  sed -e 's/DirectoryIndex.*/DirectoryIndex index.html index.php/' -i /etc/apache2/conf/httpd.conf
 
-echo "---------------------------------------> Install PHP 7.1 <---------------------------------------"
-# Install PHP 7.1
-apt -y install software-properties-common
-add-apt-repository ppa:ondrej/php
-apt-get update
-apt -y install php7.4
-
-#apt-get install -y php71 php71-cli php71-fpm php71-mysql php71-xml php71-curl php71-opcache php71-pdo php71-gd php71-pecl-apcu php71-mbstring php71-imap php71-pecl-redis php71-mcrypt php71-mysqlnd mod24_ssl
 
 echo "---------------------------------------> Install Composer <---------------------------------------"
 # Get Composer, and install to /usr/local/bin
