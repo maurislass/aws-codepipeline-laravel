@@ -36,10 +36,12 @@ mkdir -p /var/www/html/public
 
 echo "---------------------------------------> Install PHP 7.1 <---------------------------------------"
 # Install PHP 7.1
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:ondrej/php
-sudo apt-get update
-apt-get install -y php71 php71-cli php71-fpm php71-mysql php71-xml php71-curl php71-opcache php71-pdo php71-gd php71-pecl-apcu php71-mbstring php71-imap php71-pecl-redis php71-mcrypt php71-mysqlnd mod24_ssl
+apt -y install software-properties-common
+add-apt-repository ppa:ondrej/php
+apt-get update
+apt -y install php7.4
+
+#apt-get install -y php71 php71-cli php71-fpm php71-mysql php71-xml php71-curl php71-opcache php71-pdo php71-gd php71-pecl-apcu php71-mbstring php71-imap php71-pecl-redis php71-mcrypt php71-mysqlnd mod24_ssl
 
 
 # Get Composer, and install to /usr/local/bin
