@@ -15,14 +15,7 @@ apt-get install -y git
 
 echo "---------------------------------------> Remove current apache & php <---------------------------------------"
 # Remove current apache & php
-#apt-get -y remove httpd* php*
-
-echo "---------------------------------------> Install PHP 7.1 <---------------------------------------"
-# Install PHP 7.1
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:ondrej/php
-sudo apt-get update
-apt-get install -y php71 php71-cli php71-fpm php71-mysql php71-xml php71-curl php71-opcache php71-pdo php71-gd php71-pecl-apcu php71-mbstring php71-imap php71-pecl-redis php71-mcrypt php71-mysqlnd mod24_ssl
+apt-get -y remove httpd* php*
 
 echo "---------------------------------------> Install Apache <---------------------------------------"
 # Install Apache 2.4
@@ -46,6 +39,15 @@ if [ ! -f "/usr/local/bin/composer" ]; then
 else
     /usr/local/bin/composer self-update --stable --no-ansi --no-interaction
 fi
+
+
+echo "---------------------------------------> Install PHP 7.1 <---------------------------------------"
+# Install PHP 7.1
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+apt-get install -y php71 php71-cli php71-fpm php71-mysql php71-xml php71-curl php71-opcache php71-pdo php71-gd php71-pecl-apcu php71-mbstring php71-imap php71-pecl-redis php71-mcrypt php71-mysqlnd mod24_ssl
+
 
 # Restart apache
 service httpd start
