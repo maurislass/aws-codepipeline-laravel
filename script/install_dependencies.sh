@@ -3,8 +3,9 @@
 # Exit on error
 set -o errexit -o pipefail
 
+echo "--> Updating CentOS System"
 # Update yum
-#yum update -y
+apt-get update -y
 #yum upgrade -y
 
 # Install packages
