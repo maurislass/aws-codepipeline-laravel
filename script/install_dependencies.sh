@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "testing"
+
 RUN sudo su
 # Exit on error
 set -o errexit -o pipefail
