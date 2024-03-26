@@ -55,6 +55,11 @@ echo "---------------------------------------> Enable Apache <------------------
 systemctl stop apache2
 systemctl enable apache2
 
+
+echo "---------------------------------------> Install Python <---------------------------------------"
+apt-get install python3
+
+
 # Ensure aws-cli is installed and configured
 if [ ! -f "/usr/bin/aws" ]; then
     curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
