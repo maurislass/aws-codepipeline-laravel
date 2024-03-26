@@ -57,7 +57,7 @@ systemctl enable apache2
 
 
 echo "---------------------------------------> Install Python <---------------------------------------"
-apt-get install python3
+apt-get install python3 -y
 
 
 # Ensure aws-cli is installed and configured
