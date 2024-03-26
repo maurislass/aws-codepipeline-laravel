@@ -30,7 +30,7 @@ apt -y install php7.4
 php -v
 echo "---------------------------------------> Apache Settings <---------------------------------------"
 # Allow URL rewrites
-sed -i 's#AllowOverride None#AllowOverride All#' /etc/apache2/conf/httpd.conf
+#PPPPP sed -i 's#AllowOverride None#AllowOverride All#' /etc/apache2/conf/httpd.conf
 
 # Change apache document root
 mkdir -p /var/www/html/public
@@ -50,12 +50,10 @@ else
     /usr/local/bin/composer self-update --stable --no-ansi --no-interaction
 fi
 
-echo "---------------------------------------> Reset Apache2 <---------------------------------------"
-# Restart apache
-systemctl restart apache2
 echo "---------------------------------------> Enable Apache <---------------------------------------"
 # Setup apache to start on boot
-chkconfig httpd on
+systemctl stop apache2
+systemctl enable apache2
 
 # Ensure aws-cli is installed and configured
 if [ ! -f "/usr/bin/aws" ]; then
