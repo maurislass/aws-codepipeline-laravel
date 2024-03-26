@@ -64,7 +64,7 @@ apt-get install python3 -y
 if [ ! -f "/usr/bin/aws" ]; then
     curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
     unzip awscli-bundle.zip
-    ./awscli-bundle/install -b /usr/bin/aws
+    ./awscli-bundle/install -y -b /usr/bin/aws
 fi
 
 # Ensure AWS Variables are available
