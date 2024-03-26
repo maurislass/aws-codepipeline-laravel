@@ -21,17 +21,15 @@ echo "---------------------------------------> Install Apache <-----------------
 # Install Apache 2.4
 apt-get -y install apache2
 
-echo pwd
-
 # Allow URL rewrites
-sed -i 's#AllowOverride None#AllowOverride All#' /etc/httpd/conf/httpd.conf
+sed -i 's#AllowOverride None#AllowOverride All#' /etc/apache2/conf/httpd.conf
 
 # Change apache document root
 mkdir -p /var/www/html/public
-sed -i 's#DocumentRoot "/var/www/html"#DocumentRoot "/var/www/html/public"#' /etc/httpd/conf/httpd.conf
+sed -i 's#DocumentRoot "/var/www/html"#DocumentRoot "/var/www/html/public"#' /etc/apache2/conf/httpd.conf
 
 # Change apache directory index
-sed -e 's/DirectoryIndex.*/DirectoryIndex index.html index.php/' -i /etc/httpd/conf/httpd.conf
+sed -e 's/DirectoryIndex.*/DirectoryIndex index.html index.php/' -i /etc/apache2/conf/httpd.conf
 
 # Get Composer, and install to /usr/local/bin
 if [ ! -f "/usr/local/bin/composer" ]; then
