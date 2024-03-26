@@ -4,8 +4,8 @@
 set -o errexit -o pipefail
 
 # Update yum
-yum update -y
-yum upgrade -y
+#yum update -y
+#yum upgrade -y
 
 # Install packages
 yum install -y curl
