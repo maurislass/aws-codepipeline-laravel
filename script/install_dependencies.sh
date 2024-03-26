@@ -5,8 +5,8 @@ set -o errexit -o pipefail
 
 echo "---------------------------------------> Update apt-get <---------------------------------------"
 # Update apt-get
-#apt-get update -y
-#apt-get upgrade -y
+apt-get update -y
+apt-get upgrade -y
 
 echo "---------------------------------------> Install Git & Curl <---------------------------------------"
 # Install packages
@@ -15,7 +15,7 @@ apt-get install -y git
 
 echo "---------------------------------------> Remove current apache & php <---------------------------------------"
 # Remove current apache & php
-apt-get -y remove httpd* php*
+#apt-get -y remove httpd* php*
 
 echo "---------------------------------------> Install Apache <---------------------------------------"
 # Install Apache 2.4
