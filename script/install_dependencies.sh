@@ -22,6 +22,7 @@ echo "---------------------------------------> Install Apache <-----------------
 apt-get -y install apache2
 
 cd /etc/apache2
+ls -l
 
 # Allow URL rewrites
 sed -i 's#AllowOverride None#AllowOverride All#' /etc/apache2/conf/httpd.conf
