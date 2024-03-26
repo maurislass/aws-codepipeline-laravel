@@ -4,22 +4,22 @@
 set -o errexit -o pipefail
 
 echo "--> Updating CentOS System"
-# Update yum
+# Update apt-get
 apt-get update -y
-#yum upgrade -y
+apt-get upgrade -y
 
 # Install packages
-yum install -y curl
-yum install -y git
+apt-get install -y curl
+apt-get install -y git
 
 # Remove current apache & php
-yum -y remove httpd* php*
+apt-get -y remove httpd* php*
 
 # Install PHP 7.1
-yum install -y php71 php71-cli php71-fpm php71-mysql php71-xml php71-curl php71-opcache php71-pdo php71-gd php71-pecl-apcu php71-mbstring php71-imap php71-pecl-redis php71-mcrypt php71-mysqlnd mod24_ssl
+apt-get install -y php71 php71-cli php71-fpm php71-mysql php71-xml php71-curl php71-opcache php71-pdo php71-gd php71-pecl-apcu php71-mbstring php71-imap php71-pecl-redis php71-mcrypt php71-mysqlnd mod24_ssl
 
 # Install Apache 2.4
-yum -y install httpd24
+apt-get -y install httpd24
 
 # Allow URL rewrites
 sed -i 's#AllowOverride None#AllowOverride All#' /etc/httpd/conf/httpd.conf
