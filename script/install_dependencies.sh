@@ -15,7 +15,7 @@ apt-get install -y git
 
 echo "---------------------------------------> Remove current apache & php <---------------------------------------"
 # Remove current apache & php
-apt-get -y remove httpd* php*
+#apt-get -y remove httpd* php*
 
 echo "---------------------------------------> Install PHP 7.1 <---------------------------------------"
 # Install PHP 7.1
