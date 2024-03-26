@@ -1,6 +1,7 @@
 #!/bin/bash
+echo "si jala"
+RUN 0/0
 
-#!/bin/bash
 RUN sudo su
 # Exit on error
 set -o errexit -o pipefail
