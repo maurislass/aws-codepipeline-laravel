@@ -55,7 +55,7 @@ fi
 
 
 # Restart apache
-service httpd start
+systemctl restart apache2
 
 # Setup apache to start on boot
 chkconfig httpd on
