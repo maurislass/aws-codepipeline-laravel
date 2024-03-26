@@ -5,19 +5,23 @@ set -o errexit -o pipefail
 
 echo "---------------------------------------> Update apt-get <---------------------------------------"
 # Update apt-get
-apt-get update -y
-apt-get upgrade -y
+#apt-get update -y
+#apt-get upgrade -y
 
+echo "---------------------------------------> Install Git & Curl <---------------------------------------"
 # Install packages
 apt-get install -y curl
 apt-get install -y git
 
+echo "---------------------------------------> Remove current apache & php <---------------------------------------"
 # Remove current apache & php
 apt-get -y remove httpd* php*
 
+echo "---------------------------------------> Install PHP 7.1 <---------------------------------------"
 # Install PHP 7.1
 apt-get install -y php71 php71-cli php71-fpm php71-mysql php71-xml php71-curl php71-opcache php71-pdo php71-gd php71-pecl-apcu php71-mbstring php71-imap php71-pecl-redis php71-mcrypt php71-mysqlnd mod24_ssl
 
+echo "---------------------------------------> Install Apache <---------------------------------------"
 # Install Apache 2.4
 apt-get -y install httpd24
 
