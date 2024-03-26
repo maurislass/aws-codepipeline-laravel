@@ -62,9 +62,12 @@ apt-get install python3 -y
 
 # Ensure aws-cli is installed and configured
 if [ ! -f "/usr/bin/aws" ]; then
+    echo "---------------------------------------> Instal AWS Cli <---------------------------------------"
     curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+    echo "---------------------------------------> Unzip AWS Cli <---------------------------------------"
     unzip awscli-bundle.zip
-    ./awscli-bundle/install -y -b /usr/bin/aws
+    echo "---------------------------------------> Install AWS Cli <---------------------------------------"
+    ./awscli-bundle/install -b /usr/bin/aws
 fi
 
 # Ensure AWS Variables are available
