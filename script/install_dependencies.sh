@@ -19,7 +19,7 @@ echo "---------------------------------------> Remove current apache & php <----
 
 echo "---------------------------------------> Install Apache <---------------------------------------"
 # Install Apache 2.4
-apt-get -y install httpd24
+apt-get -y install apache2
 
 # Allow URL rewrites
 sed -i 's#AllowOverride None#AllowOverride All#' /etc/httpd/conf/httpd.conf
