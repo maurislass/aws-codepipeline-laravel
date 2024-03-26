@@ -43,7 +43,7 @@ apt -y install php7.4
 
 #apt-get install -y php71 php71-cli php71-fpm php71-mysql php71-xml php71-curl php71-opcache php71-pdo php71-gd php71-pecl-apcu php71-mbstring php71-imap php71-pecl-redis php71-mcrypt php71-mysqlnd mod24_ssl
 
-
+echo "---------------------------------------> Install Composer <---------------------------------------"
 # Get Composer, and install to /usr/local/bin
 if [ ! -f "/usr/local/bin/composer" ]; then
     php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -53,10 +53,10 @@ else
     /usr/local/bin/composer self-update --stable --no-ansi --no-interaction
 fi
 
-
+echo "---------------------------------------> Reset Apache2 <---------------------------------------"
 # Restart apache
 systemctl restart apache2
-
+echo "---------------------------------------> Enable Apache <---------------------------------------"
 # Setup apache to start on boot
 chkconfig httpd on
 
