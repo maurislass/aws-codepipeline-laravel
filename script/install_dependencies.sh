@@ -27,6 +27,7 @@ add-apt-repository ppa:ondrej/php
 apt-get update
 apt -y install php7.4
 #apt-get install -y php71 php71-cli php71-fpm php71-mysql php71-xml php71-curl php71-opcache php71-pdo php71-gd php71-pecl-apcu php71-mbstring php71-imap php71-pecl-redis php71-mcrypt php71-mysqlnd mod24_ssl
+systemctl status apache2
 systemctl restart apache2
 echo "---------------------------------------> Apache Settings <---------------------------------------"
 # Allow URL rewrites
