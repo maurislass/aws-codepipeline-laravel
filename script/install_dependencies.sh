@@ -25,14 +25,14 @@ cd /etc/apache2
 ls -l
 
 # Allow URL rewrites
-sed -i 's#AllowOverride None#AllowOverride All#' /etc/apache2/conf/httpd.conf
+#PPPPP  sed -i 's#AllowOverride None#AllowOverride All#' /etc/apache2/conf/httpd.conf
 
 # Change apache document root
 mkdir -p /var/www/html/public
-sed -i 's#DocumentRoot "/var/www/html"#DocumentRoot "/var/www/html/public"#' /etc/apache2/conf/httpd.conf
+#PPPPP    sed -i 's#DocumentRoot "/var/www/html"#DocumentRoot "/var/www/html/public"#' /etc/apache2/conf/httpd.conf
 
 # Change apache directory index
-sed -e 's/DirectoryIndex.*/DirectoryIndex index.html index.php/' -i /etc/apache2/conf/httpd.conf
+#PPPPP  sed -e 's/DirectoryIndex.*/DirectoryIndex index.html index.php/' -i /etc/apache2/conf/httpd.conf
 
 # Get Composer, and install to /usr/local/bin
 if [ ! -f "/usr/local/bin/composer" ]; then
