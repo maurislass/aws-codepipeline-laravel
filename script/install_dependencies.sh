@@ -58,16 +58,21 @@ systemctl enable apache2
 
 echo "---------------------------------------> Install Python <---------------------------------------"
 apt-get install python3 -y
-
+apt-get -y install python3-pip
+apt-get -y install python3-venv -f
+# In the form major.minor.micro e.g. '3.6.8'
+# The second part excludes the 'Python ' prefix
 
 # Ensure aws-cli is installed and configured
 if [ ! -f "/usr/bin/aws" ]; then
     echo "---------------------------------------> Instal AWS Cli <---------------------------------------"
     curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
     echo "---------------------------------------> Unzip AWS  <---------------------------------------"
-    unzip awscli-bundle.zip -A
+    unzip -o awscli-bundle.zip -d awscli-bundle
     echo "---------------------------------------> Install AWS Cli <---------------------------------------"
     ./awscli-bundle/install -b /usr/bin/aws
+    #./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+    #./awscli-bundle/install -b ~/bin/aws
 fi
 
 # Ensure AWS Variables are available
