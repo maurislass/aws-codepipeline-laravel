@@ -64,7 +64,7 @@ apt-get install python3 -y
 if [ ! -f "/usr/bin/aws" ]; then
     echo "---------------------------------------> Instal AWS Cli <---------------------------------------"
     curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
-    echo "---------------------------------------> Unzip AWS Cli <---------------------------------------"
+    echo "---------------------------------------> Unzip AWS  <---------------------------------------"
     unzip awscli-bundle.zip -A
     echo "---------------------------------------> Install AWS Cli <---------------------------------------"
     ./awscli-bundle/install -b /usr/bin/aws
